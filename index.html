@@ -7,43 +7,154 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet">
     <style>
         /* --- GLOBAL STYLES --- */
-        body { font-family: 'DM Sans', sans-serif; background: #f9f9f9; color: #1a1a1a; margin: 0; padding: 0; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        body { 
+            font-family: 'DM Sans', sans-serif; 
+            background: #f9f9f9; 
+            color: #1a1a1a; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+            transition: 0.3s; 
+        }
         
         /* --- LAYOUT UTILITIES --- */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
-        .section { padding: 5rem 0; }
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 5%; 
+        }
+        .section { 
+            padding: 5rem 0; 
+        }
 
         /* --- HERO SECTION --- */
-        .hero { padding-top: 8rem; padding-bottom: 4rem; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -1.5px; }
-        .hero p { font-size: 1.4rem; color: #666; max-width: 700px; margin-bottom: 2rem; }
-        .btn { display: inline-block; padding: 12px 25px; background: #1a1a1a; color: #fff; border-radius: 50px; font-weight: 500; }
-        .btn:hover { background: #333; transform: translateY(-2px); }
-        .btn-outline { background: transparent; border: 1px solid #ccc; color: #1a1a1a; margin-left: 10px; }
-        .btn-outline:hover { border-color: #000; }
+        .hero { 
+            padding-top: 8rem; 
+            padding-bottom: 4rem; 
+        }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            line-height: 1.1; 
+            margin-bottom: 1rem; 
+            letter-spacing: -1.5px; 
+        }
+        .hero p { 
+            font-size: 1.4rem; 
+            color: #666; 
+            max-width: 700px; 
+            margin-bottom: 2rem; 
+        }
+        .btn { 
+            display: inline-block; 
+            padding: 12px 25px; 
+            background: #1a1a1a; 
+            color: #fff; 
+            border-radius: 50px; 
+            font-weight: 500; 
+        }
+        .btn:hover { 
+            background: #333; 
+            transform: translateY(-2px); 
+        }
+        .btn-outline { 
+            background: transparent; 
+            border: 1px solid #ccc; 
+            color: #1a1a1a; 
+            margin-left: 10px; 
+        }
+        .btn-outline:hover { 
+            border-color: #000; 
+        }
 
         /* --- SKILLS SECTION --- */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .skill-category h3 { font-size: 1.2rem; border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; }
-        .skill-category ul { list-style: none; padding: 0; }
-        .skill-category li { margin-bottom: 8px; color: #555; display: flex; align-items: center; }
-        .skill-category li::before { content: "•"; color: #ccc; margin-right: 10px; }
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 2rem; 
+            margin-top: 2rem; 
+        }
+        .skill-category h3 { 
+            font-size: 1.2rem; 
+            border-bottom: 2px solid #ddd; 
+            padding-bottom: 10px; 
+            margin-bottom: 15px; 
+        }
+        .skill-category ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .skill-category li { 
+            margin-bottom: 8px; 
+            color: #555; 
+            display: flex; 
+            align-items: center; 
+        }
+        .skill-category li::before { 
+            content: "•"; 
+            color: #ccc; 
+            margin-right: 10px; 
+        }
 
         /* --- PROJECTS GRID --- */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 2rem; }
-        .project-card { display: block; cursor: pointer; }
-        .project-img-wrapper { overflow: hidden; border-radius: 12px; margin-bottom: 15px; height: 300px; background: #e0e0e0; }
-        .project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
-        .project-card:hover .project-img { transform: scale(1.05); }
-        .project-info h3 { font-size: 1.8rem; margin: 0 0 10px 0; }
-        .project-info p { color: #666; font-size: 1rem; }
-        .tags { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+        .project-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 3rem; 
+            margin-top: 2rem; 
+        }
+        .project-card { 
+            display: block; 
+            cursor: pointer; 
+        }
+        .project-img-wrapper { 
+            overflow: hidden; 
+            border-radius: 12px; 
+            margin-bottom: 15px; 
+            height: 300px; 
+            background: #e0e0e0; 
+        }
+        .project-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease; 
+            display: block; 
+        }
+        .project-card:hover .project-img { 
+            transform: scale(1.05); 
+        }
+        .project-info h3 { 
+            font-size: 1.8rem; 
+            margin: 0 0 10px 0; 
+        }
+        .project-info p { 
+            color: #666; 
+            font-size: 1rem; 
+        }
+        .tags { 
+            font-size: 0.85rem; 
+            color: #888; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-bottom: 5px; 
+            display: block; 
+        }
 
         /* --- FOOTER --- */
-        footer { padding: 4rem 0; text-align: center; border-top: 1px solid #eee; margin-top: 4rem; }
+        footer { 
+            padding: 4rem 0; 
+            text-align: center; 
+            border-top: 1px solid #eee; 
+            margin-top: 4rem; 
+        }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+        }
     </style>
 </head>
 <body>
