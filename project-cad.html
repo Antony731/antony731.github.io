@@ -9,9 +9,6 @@
         body { font-family: 'DM Sans', sans-serif; background: #fff; color: #1a1a1a; margin: 0; line-height: 1.8; }
         .container { max-width: 800px; margin: 0 auto; padding: 0 5%; }
         
-        /* Image Styling */
-        img { max-width: 100%; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        
         nav { padding: 20px 5%; border-bottom: 1px solid #eee; }
         .back-link { text-decoration: none; font-weight: bold; color: #666; font-size: 0.9rem; }
         .back-link:hover { color: #000; }
@@ -27,6 +24,25 @@
         .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
         .stat-item strong { display: block; font-size: 1.2rem; color: #1a1a1a; }
         .stat-item span { font-size: 0.85rem; color: #666; }
+
+        /* GALLERY GRID */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .gallery-card { display: block; text-decoration: none; }
+        
+        .gallery-img-wrapper { 
+            overflow: hidden; 
+            border-radius: 8px; 
+            height: 200px; 
+            background: #eee; 
+            margin-bottom: 10px; 
+            border: 1px solid #ddd;
+        }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-card:hover .gallery-img { transform: scale(1.05); }
+        
+        .gallery-title { font-weight: bold; color: #1a1a1a; display: block; margin-bottom: 5px; }
+        .gallery-desc { font-size: 0.85rem; color: #666; }
+
     </style>
 </head>
 <body>
@@ -42,12 +58,10 @@
             <p class="subtitle">Advanced Modeling & Visualization</p>
         </div>
 
-        <img src="cad-model.jpg" alt="3D CAD Render">
-
         <div class="stats-grid">
             <div class="stat-item"><strong>SolidWorks</strong> <span>Main Tool</span></div>
             <div class="stat-item"><strong>Fusion 360</strong> <span>CAM & Modeling</span></div>
-            <div class="stat-item"><strong>Rendering</strong> <span>Visualization</span></div>
+            <div class="stat-item"><strong>Drafting</strong> <span>Production Drawings</span></div>
         </div>
 
         <div class="content-block">
@@ -61,14 +75,48 @@
                 <li><strong>Complex Assemblies:</strong> Managing large assemblies with mating conditions and interference detection.</li>
                 <li><strong>Sheet Metal Design:</strong> Creating flat patterns, bends, and cuts for fabrication.</li>
                 <li><strong>Drafting:</strong> Generating production-ready 2D drawings with proper GD&T and BOMs.</li>
-                <li><strong>Rendering:</strong> Using tools like KeyShot or SolidWorks Visualize to create photorealistic images for presentations.</li>
             </ul>
         </div>
 
         <div class="content-block">
-            <h2>Gallery</h2>
-            <p>Below are examples of complex geometries and assemblies I have designed.</p>
-            <p style="color: #666; font-style: italic;">(Add more CAD screenshots here by uploading images and using the img tag)</p>
+            <h2>Selected CAD Projects</h2>
+            <p>Click on an image to view the full model details.</p>
+            
+            <div class="gallery-grid">
+                
+                <a href="cad-exhaust.html" class="gallery-card">
+                    <div class="gallery-img-wrapper">
+                        <img src="cad-exhaust.jpg" alt="Exhaust Manifold" class="gallery-img">
+                    </div>
+                    <span class="gallery-title">Exhaust Manifold</span>
+                    <span class="gallery-desc">Complex Lofting & Fluid Flow Design</span>
+                </a>
+
+                <a href="cad-engine.html" class="gallery-card">
+                    <div class="gallery-img-wrapper">
+                        <img src="cad-engine.jpg" alt="2 Stroke Engine" class="gallery-img">
+                    </div>
+                    <span class="gallery-title">2 Stroke Engine</span>
+                    <span class="gallery-desc">Assembly Mating & Internal Components</span>
+                </a>
+
+                <a href="cad-gear.html" class="gallery-card">
+                    <div class="gallery-img-wrapper">
+                        <img src="cad-gear.jpg" alt="Aircraft Landing Gear" class="gallery-img">
+                    </div>
+                    <span class="gallery-title">Aircraft Landing Gear</span>
+                    <span class="gallery-desc">Structural Strength & Mechanisms</span>
+                </a>
+
+                <a href="cad-radial.html" class="gallery-card">
+                    <div class="gallery-img-wrapper">
+                        <img src="cad-radial.jpg" alt="Radial Engine" class="gallery-img">
+                    </div>
+                    <span class="gallery-title">Radial Engine</span>
+                    <span class="gallery-desc">Multi-Cylinder Patterning</span>
+                </a>
+
+            </div>
         </div>
         
         <br>
