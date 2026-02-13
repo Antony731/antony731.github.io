@@ -28,9 +28,10 @@
         .stat-item strong { display: block; font-size: 1.2rem; color: #1a1a1a; }
         .stat-item span { font-size: 0.85rem; color: #666; }
 
-        /* Process Steps */
-        .process-step { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 2rem; }
-        .process-step h3 { margin-bottom: 0.5rem; color: #2563eb; }
+        /* Responsibilities List */
+        .resp-list { list-style: none; padding: 0; }
+        .resp-list li { margin-bottom: 15px; padding-left: 20px; border-left: 2px solid #ddd; }
+        .resp-list strong { color: #2563eb; }
     </style>
 </head>
 <body>
@@ -43,44 +44,46 @@
         
         <div class="project-header">
             <h1>Precision Component Manufacturing</h1>
-            <p class="subtitle">Process Optimization & Quality Control at Imperio Tech</p>
+            <p class="subtitle">CNC Operation & Process Optimization</p>
         </div>
 
-        <img src="cnc-part.jpg" alt="Precision Machined Gear">
+        <img src="cnc-action.jpg" alt="Antony setting up the CNC Lathe">
 
         <div class="stats-grid">
-            <div class="stat-item"><strong>+/- 0.01mm</strong> <span>Tolerance Held</span></div>
-            <div class="stat-item"><strong>Stainless 316</strong> <span>Material</span></div>
-            <div class="stat-item"><strong>Fanuc</strong> <span>Control System</span></div>
+            <div class="stat-item"><strong>Fusion 360</strong> <span>CAD/CAM</span></div>
+            <div class="stat-item"><strong>G-Code</strong> <span>Programming</span></div>
+            <div class="stat-item"><strong>Safety</strong> <span>Protocol</span></div>
         </div>
 
         <div class="content-block">
-            <h2>The Scope</h2>
-            <p>At Imperio Tech, I was tasked with manufacturing high-precision shaft and gear components for industrial machinery. The primary challenge was maintaining tight geometric tolerances (concentricity and runout) on long turned parts while minimizing cycle time.</p>
-        </div>
-
-        <div class="content-block">
-            <h2>Execution & Process</h2>
+            <h2>Core Responsibilities</h2>
+            <p>My role focuses on the end-to-end manufacturing of precision components, from interpreting the initial engineering drawing to the final inspection of the machined part.</p>
             
-            <div class="process-step">
-                <h3>1. Setup & Workholding</h3>
-                <p>Rigidity is key to precision. I utilized soft jaws bored to the exact diameter of the workpiece to prevent marring and vibration. I indicated the part to within 0.005mm TIR (Total Indicator Runout) before starting the cycle.</p>
-                </div>
-
-            <div class="process-step">
-                <h3>2. Programming & Optimization</h3>
-                <p>I reviewed the generated G-code and manually optimized the toolpaths. By adjusting the <strong>G96 (Constant Surface Speed)</strong> and feed rates for the finishing pass, I achieved the required Ra 0.8 surface finish without needing secondary grinding operations.</p>
-            </div>
-
-            <div class="process-step">
-                <h3>3. Inspection & Quality Control</h3>
-                <p>Quality is verified at the machine, not just the inspection room. I used digital micrometers and bore gauges to verify critical dimensions immediately after the finishing pass. Tool wear offsets were adjusted in real-time to keep the process centered within the tolerance band.</p>
-                </div>
+            <ul class="resp-list">
+                <li>
+                    <strong>Machine Setup:</strong>
+                    I perform complete setup operations on CNC Lathes, including jaw boring, establishing work offsets (G54), and setting tool geometry offsets to ensure the first part is correct.
+                </li>
+                <li>
+                    <strong>Technical Interpretation:</strong>
+                    I interpret complex 2D technical drawings, analyzing geometric tolerances (GD&T) to determine the most efficient machining strategy.
+                </li>
+                <li>
+                    <strong>Programming (G-Code & Fusion 360):</strong>
+                    For standard parts, I write and edit G-code programs manually at the controller. For complex geometries, I use Fusion 360 to draft the model and generate CAM toolpaths.
+                </li>
+                <li>
+                    <strong>Safety & Operation:</strong>
+                    I operate heavy machinery in strict adherence to OH&S safety protocols, ensuring a hazard-free workshop environment while maintaining production targets.
+                </li>
+            </ul>
         </div>
 
         <div class="content-block">
-            <h2>Final Outcome</h2>
-            <p>The optimized process reduced cycle time by 15% and achieved a 99.8% acceptance rate. The components passed all CMM (Coordinate Measuring Machine) validations and were delivered on schedule.</p>
+            <h2>The Finished Part</h2>
+            <p>Below is an example of a completed component, machined to specification with a high-quality surface finish.</p>
+            
+            <img src="completed-part.jpg" alt="Finished Machined Component">
         </div>
         
         <br>
@@ -91,4 +94,3 @@
 
 </body>
 </html>
-
