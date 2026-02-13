@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldham Coupling | Antony Alder George</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'DM Sans', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px 5%; line-height: 1.6; color: #1a1a1a; }
+        h1 { font-size: 2.5rem; margin-bottom: 5px; }
+        h2 { border-left: 4px solid #1a1a1a; padding-left: 15px; margin-top: 40px; }
+        .back { text-decoration: none; color: #666; font-weight: bold; font-size: 0.9rem; }
+        
+        /* RESPONSIVE VIDEO CONTAINER */
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 30px 0; background: #000; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
+        /* Engineering Formula Box */
+        .formula-box { background: #f4f4f4; padding: 15px; border-radius: 5px; font-family: 'Courier New', monospace; border-left: 4px solid #e67e22; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <br><a href="mechanisms.html" class="back">← Back to Mechanisms</a>
+    <div style="margin-top: 40px;">
+        <h1>Oldham Coupling</h1>
+        <p style="color: #666; font-size: 1.2rem;">Parallel Shaft Misalignment & Constant Velocity</p>
+        
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/7UwfPhoe2t0" title="Oldham Coupling Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h2>What is it?</h2>
+        <p>The Oldham coupling is a mechanism used to transmit torque between two shafts that are parallel but not collinear (lateral misalignment). It consists of three discs: two outer discs connected to the input and output shafts, and a central "floating" disc with tongue-and-groove features on both sides, oriented 90° apart.</p>
+        
+        
+
+        <h2>Why use it? (The Engineering Advantage)</h2>
+        <p>In precision machinery, aligning two shafts perfectly is often impossible due to manufacturing tolerances or thermal expansion. The Oldham coupling solves this because:</p>
+        <ul>
+            <li><strong>High Misalignment Tolerance:</strong> It can handle significant parallel offset that would destroy a rigid coupling or cause fatigue in a flexible coupling.</li>
+            <li><strong>Compact Size:</strong> It takes up very little axial space compared to a double universal joint setup.</li>
+            <li><strong>Zero Backlash:</strong> High-quality versions use a polymer center disc that pre-loads the fit, eliminating play/slop, which is critical for reversing loads.</li>
+        </ul>
+
+        <h2>Engineering Analysis: Homokinetic Motion</h2>
+        <p>The most critical feature of the Oldham coupling is that it is <strong>Homokinetic</strong> (Constant Velocity).</p>
+        <p>Unlike a single Universal Joint (Cardan joint), which causes the output speed to fluctuate sinusoidally during rotation (speeding up and slowing down twice per revolution), the Oldham coupling maintains a perfect 1:1 input/output speed ratio at all times.</p>
+        
+        <div class="formula-box">
+            ω_in = ω_out (Constant)
+        </div>
+        
+        <p><em>Design Note:</em> The limit of this mechanism is friction. As the misalignment increases, the sliding velocity of the center disc increases, generating heat and wear. It requires lubrication or self-lubricating materials (like Acetal or Nylon) for the center disc.</p>
+
+        <h2>Real-World Applications</h2>
+        <p>This mechanism is standard in:</p>
+        <ul>
+            <li><strong>3D Printers & CNC Lead Screws:</strong> Connecting the stepper motor to the lead screw. If the motor and screw aren't perfectly aligned, a rigid coupling would cause "Z-wobble" (banding) in the print. The Oldham coupling absorbs the wobble.</li>
+            <li><strong>Servo Mechanisms:</strong> Robotics joints where precise angular positioning is required despite slight structural flex.</li>
+            <li><strong>Pumps:</strong> Connecting motors to pump heads where seal wear might cause the shaft center to drift over time.</li>
+        </ul>
+    </div>
+</body>
+</html>
+
