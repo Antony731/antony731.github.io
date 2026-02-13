@@ -6,142 +6,308 @@
     <title>Antony Alder George | Mechanical Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* --- GLOBAL STYLES --- */
-        body { 
-            font-family: 'DM Sans', sans-serif; 
-            background: #f9f9f9; 
-            color: #1a1a1a; 
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6; 
-        }
-        a { 
-            text-decoration: none; 
-            color: inherit; 
-            transition: 0.3s; 
+        /* --- 1. RESET & VARIABLES --- */
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666;
+            --accent: #2563eb; /* Professional Blue */
+            --light-grey: #f4f4f5;
         }
         
-        /* --- LAYOUT UTILITIES --- */
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 0 5%; 
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'DM Sans', sans-serif; 
+            background: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased; /* Makes text sharper on Mac */
         }
-        .section { 
-            padding: 5rem 0; 
+        
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
         }
 
-        /* --- HERO SECTION --- */
+        /* --- 2. HEADER & HERO --- */
+        header {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.5px; }
+
         .hero { 
-            padding-top: 8rem; 
-            padding-bottom: 4rem; 
+            padding: 6rem 0 4rem; 
+            max-width: 800px;
         }
         .hero h1 { 
             font-size: 3.5rem; 
             line-height: 1.1; 
-            margin-bottom: 1rem; 
+            margin-bottom: 1.5rem; 
             letter-spacing: -1.5px; 
+            color: #111;
         }
         .hero p { 
-            font-size: 1.4rem; 
-            color: #666; 
-            max-width: 700px; 
-            margin-bottom: 2rem; 
+            font-size: 1.3rem; 
+            color: var(--text-muted); 
+            max-width: 600px; 
+            margin-bottom: 2.5rem; 
+            font-weight: 400;
         }
+
+        /* --- Buttons --- */
+        .btn-group { display: flex; gap: 15px; }
         .btn { 
             display: inline-block; 
-            padding: 12px 25px; 
-            background: #1a1a1a; 
-            color: #fff; 
+            padding: 12px 28px; 
             border-radius: 50px; 
             font-weight: 500; 
+            font-size: 1rem;
         }
-        .btn:hover { 
+        .btn-primary { 
+            background: #111; 
+            color: #fff; 
+            border: 1px solid #111;
+        }
+        .btn-primary:hover { 
             background: #333; 
             transform: translateY(-2px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .btn-outline { 
             background: transparent; 
-            border: 1px solid #ccc; 
-            color: #1a1a1a; 
-            margin-left: 10px; 
+            border: 1px solid #e5e5e5; 
+            color: #111; 
         }
         .btn-outline:hover { 
-            border-color: #000; 
+            border-color: #111; 
+            background: #fff;
         }
 
-        /* --- SKILLS SECTION --- */
+        /* --- 3. SKILLS "PILLS" LAYOUT --- */
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .skills-section { padding: 4rem 0; border-top: 1px solid #f0f0f0; }
         .skills-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 2rem; 
-            margin-top: 2rem; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 3rem; 
         }
-        .skill-category h3 { 
-            font-size: 1.2rem; 
-            border-bottom: 2px solid #ddd; 
-            padding-bottom: 10px; 
-            margin-bottom: 15px; 
-        }
-        .skill-category ul { 
-            list-style: none; 
-            padding: 0; 
-        }
-        .skill-category li { 
-            margin-bottom: 8px; 
-            color: #555; 
-            display: flex; 
-            align-items: center; 
-        }
-        .skill-category li::before { 
-            content: "•"; 
-            color: #ccc; 
-            margin-right: 10px; 
+        .skill-category h3 { font-size: 1.2rem; margin-bottom: 1rem; font-weight: 700; }
+        
+        .pill-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .pill {
+            background: var(--light-grey);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #444;
+            font-weight: 500;
         }
 
-        /* --- PROJECTS GRID --- */
+        /* --- 4. PROJECTS GRID --- */
+        .projects-section { padding: 4rem 0; }
         .project-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-            gap: 3rem; 
-            margin-top: 2rem; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
         }
+        
         .project-card { 
             display: block; 
-            cursor: pointer; 
+            group: cursor: pointer; 
         }
         .project-img-wrapper { 
             overflow: hidden; 
             border-radius: 12px; 
-            margin-bottom: 15px; 
-            height: 300px; 
-            background: #e0e0e0; 
+            margin-bottom: 1.2rem; 
+            aspect-ratio: 4/3; /* Ensures all images are same shape */
+            background: #e5e5e5;
+            position: relative;
         }
         .project-img { 
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: transform 0.5s ease; 
-            display: block; 
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
         }
-        .project-card:hover .project-img { 
-            transform: scale(1.05); 
-        }
+        
+        /* Hover Effects */
+        .project-card:hover .project-img { transform: scale(1.05); }
+        .project-card:hover h3 { color: var(--accent); }
+        
         .project-info h3 { 
-            font-size: 1.8rem; 
-            margin: 0 0 10px 0; 
+            font-size: 1.4rem; 
+            margin: 0 0 0.5rem 0; 
+            font-weight: 700; 
         }
         .project-info p { 
-            color: #666; 
+            color: var(--text-muted); 
             font-size: 1rem; 
+            line-height: 1.5;
         }
         .tags { 
-            font-size: 0.85rem; 
+            font-size: 0.8rem; 
             color: #888; 
             text-transform: uppercase; 
-            letter-spacing: 1px; 
-            margin-bottom: 5px; 
+            letter-spacing: 0.5px; 
+            margin-bottom: 8px; 
             display: block; 
+            font-weight: 600;
+        }
+
+        /* --- 5. FOOTER --- */
+        footer { 
+            padding: 5rem 0; 
+            margin-top: 4rem; 
+            border-top: 1px solid #f0f0f0; 
+            color: var(--text-muted);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a { margin-left: 20px; font-weight: 500; }
+        .footer-links a:hover { color: #111; text-decoration: underline; }
+
+        /* Mobile Fixes */
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">AAG.</div>
+            <a href="mailto:aag.ofcl@gmail.com" style="font-size: 0.9rem; font-weight: 500;">Get in Touch →</a>
+        </header>
+
+        <section class="hero">
+            <h1>I design parts that actually work on the machine.</h1>
+            <p>Hi, I'm Antony. A Mechanical Engineer based in Melbourne. I combine advanced SolidWorks design skills with hands-on CNC experience to catch manufacturing errors before they happen.</p>
+            
+            <div class="btn-group">
+                <a href="#work" class="btn btn-primary">View Work</a>
+                <a href="resume.pdf" class="btn btn-outline">Resume</a>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <div class="section-title">Capabilities</div>
+            <div class="skills-grid">
+                
+                <div class="skill-category">
+                    <h3>Design & CAD</h3>
+                    <div class="pill-container">
+                        <span class="pill">SolidWorks (Advanced)</span>
+                        <span class="pill">Sheet Metal</span>
+                        <span class="pill">AutoCAD 2D</span>
+                        <span class="pill">GD&T (ISO 1101)</span>
+                        <span class="pill">DFM</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Manufacturing</h3>
+                    <div class="pill-container">
+                        <span class="pill">CNC Operation</span>
+                        <span class="pill">Lathe & Mill</span>
+                        <span class="pill">G-Code</span>
+                        <span class="pill">Precision Metrology</span>
+                        <span class="pill">Material Selection</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Engineering</h3>
+                    <div class="pill-container">
+                        <span class="pill">Primavera P6</span>
+                        <span class="pill">HAZOP Studies</span>
+                        <span class="pill">BOM Management</span>
+                        <span class="pill">ANSYS (FEA)</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="projects-section" id="work">
+            <div class="section-title">Selected Projects</div>
+            
+            <div class="project-grid">
+                
+                <a href="project-sealing.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="sealing-machine.jpg" alt="Rotary Sealing Machine" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <span class="tags">R&D • SolidWorks</span>
+                        <h3>Rotary Cup Sealing System</h3>
+                        <p>Designed and prototyped a high-precision packaging machine, streamlining the manufacturing BOM.</p>
+                    </div>
+                </a>
+
+                <a href="project-cnc.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="cnc-part.jpg" alt="CNC Precision Part" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <span class="tags">Manufacturing • CNC</span>
+                        <h3>Precision Component Mfg.</h3>
+                        <p>Optimized setup for high-precision parts using CNC Lathe/Milling and metrology validation.</p>
+                    </div>
+                </a>
+
+                <a href="mechanisms.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="mechanisms.jpg" alt="Mechanical Mechanisms" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <span class="tags">Simulation • Kinematics</span>
+                        <h3>Mechanisms & Linkages</h3>
+                        <p>Design and simulation of complex mechanical movements, gear trains, and linkage systems.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <strong>Antony Alder George</strong><br>
+                    Melbourne, VIC
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:aag.ofcl@gmail.com">Email</a>
+                    <a href="resume.pdf">Resume</a>
+                    <a href="#">LinkedIn</a> 
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
         }
 
         /* --- FOOTER --- */
