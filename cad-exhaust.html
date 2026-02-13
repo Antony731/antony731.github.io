@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhaust Manifold Design | Antony Alder George</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'DM Sans', sans-serif; background: #fff; color: #1a1a1a; margin: 0; line-height: 1.8; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 5%; }
+        
+        nav { padding: 20px 5%; border-bottom: 1px solid #eee; }
+        .back-link { text-decoration: none; font-weight: bold; color: #666; font-size: 0.9rem; }
+        .back-link:hover { color: #000; }
+
+        .project-header { margin-top: 4rem; margin-bottom: 2rem; }
+        h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 1.2rem; }
+        
+        /* Drawing Container */
+        .drawing-wrapper { 
+            border: 1px solid #ddd; 
+            padding: 10px; 
+            border-radius: 5px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            margin-bottom: 40px;
+        }
+        .drawing-img { width: 100%; display: block; }
+        
+        .content-block { margin-bottom: 3rem; }
+        h2 { font-size: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #1a1a1a; padding-left: 15px; }
+        
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
+        .stat-item strong { display: block; font-size: 1.2rem; color: #1a1a1a; }
+        .stat-item span { font-size: 0.85rem; color: #666; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="project-cad.html" class="back-link">← Back to CAD Gallery</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="project-header">
+            <h1>Exhaust Manifold Design</h1>
+            <p class="subtitle">3D Modeling & 2D Technical Drafting</p>
+        </div>
+
+        <div class="drawing-wrapper">
+            <img src="exhaust-drawing.jpg" alt="Exhaust Manifold 2D Drawing" class="drawing-img">
+            <p style="text-align: center; font-size: 0.8rem; color: #888; margin-top: 10px;">Technical Drawing with GD&T Specifications</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-item"><strong>SolidWorks</strong> <span>Software</span></div>
+            <div class="stat-item"><strong>Sweeps/Lofts</strong> <span>Key Features</span></div>
+            <div class="stat-item"><strong>Cast Iron</strong> <span>Material Spec</span></div>
+        </div>
+
+        <div class="content-block">
+            <h2>Design Challenges</h2>
+            <p>Designing an exhaust manifold requires complex surfacing techniques to ensure smooth fluid flow from the engine ports to the collector. The primary challenge was creating <strong>3D sketches</strong> that guided the sweep profiles while avoiding interference with surrounding engine components.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Technical Details</h2>
+            <ul>
+                <li><strong>3D Curve Creation:</strong> Used 3D splines to define the path of each runner.</li>
+                <li><strong>Lofted Sweeps:</strong> Created multiple profiles along the path to transition the shape from the rectangular engine port to the circular collector.</li>
+                <li><strong>Flange Mating:</strong> Designed the mounting flanges with proper bolt hole patterns and flatness tolerances for sealing.</li>
+            </ul>
+        </div>
+        
+        <br>
+        <a href="project-cad.html" class="back-link" style="border: 1px solid #ddd; padding: 10px 20px; border-radius: 5px;">Back to Gallery</a>
+        <br><br><br>
+
+    </div>
+
+</body>
+</html>
+
