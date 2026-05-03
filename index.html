@@ -34,14 +34,73 @@
             margin: 0 auto; 
             padding: 0 5%; 
         }
+
+        /* --- STICKY NAVIGATION HEADER --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 250, 252, 0.85); /* Translucent background */
+            backdrop-filter: blur(12px); /* Glassmorphism effect */
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
         
-        /* Tighter section padding to save space */
+        .nav-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            padding: 8px 24px;
+            background: var(--text-main);
+            color: #fff;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1);
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(14, 165, 233, 0.2);
+            color: #fff;
+        }
+        
         .section { padding: 4.5rem 0; }
 
         /* --- COMPACT HERO SECTION --- */
         .hero { 
-            /* Reduced padding to fit screen perfectly */
-            padding-top: 5rem; 
+            padding-top: 9rem; /* Increased to account for the fixed header */
             padding-bottom: 2rem; 
             display: flex;
             align-items: center;
@@ -84,26 +143,6 @@
             transform: translateY(-5px);
         }
 
-        /* --- SLEEK BUTTON --- */
-        .btn { 
-            display: inline-flex; 
-            align-items: center;
-            padding: 12px 32px; 
-            background: var(--accent); 
-            color: #fff; 
-            border-radius: 8px; /* Sharper edges */
-            font-weight: 600; 
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
-        }
-        .btn:hover { 
-            background: var(--accent-hover); 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
-        }
-
         /* --- SHARPER SKILLS PILLS --- */
         .section-title {
             font-size: 2rem;
@@ -135,7 +174,7 @@
         .skill-category li { 
             background: var(--card-bg); 
             padding: 8px 16px; 
-            border-radius: 6px; /* Professional square-ish look */
+            border-radius: 6px; 
             font-size: 0.9rem; 
             color: var(--text-muted); 
             font-weight: 600;
@@ -170,7 +209,7 @@
         }
         
         .project-img-wrapper { 
-            height: 240px; /* Tighter image height */
+            height: 240px; 
             overflow: hidden;
             border-bottom: 1px solid var(--border-color);
         }
@@ -217,25 +256,35 @@
         }
         
         @media (max-width: 850px) { 
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 4rem; }
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 7rem; }
             .hero h1 { font-size: 2.5rem; } 
             .hero p { margin: 0 auto 2rem auto; }
             .profile-pic { width: 200px; height: 200px; }
+            .nav-links { gap: 15px; }
+            .nav-link { display: none; /* Hide text links on very small screens to save space */ }
         }
     </style>
 </head>
 <body>
 
+    <!-- STICKY HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Antony A. George</div>
+            <nav class="nav-links">
+                <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
+                <!-- UPDATE YOUR LINKEDIN URL BELOW -->
+                <a href="https://www.linkedin.com/in/antony-george-673679388/" target="_blank" class="nav-link">LinkedIn Profile</a>
+                <a href="mailto:aag.ofcl@gmail.com" class="nav-btn">Contact Me</a>
+            </nav>
+        </div>
+    </header>
+
     <!-- COMPACT HERO SECTION -->
     <div class="container hero">
         <div class="hero-text">
             <h1>Antony Alder George</h1>
-            <p>Mechanical Engineer based in Melbourne. <br> 
-            I specialize in complex SolidWorks modeling, mechanical design, and comprehensive project engineering to streamline product development.</p>
-            
-            <div style="margin-top: 10px;">
-                <a href="mailto:aag.ofcl@gmail.com" class="btn">Contact Me</a>
-            </div>
+            <p>Mechanical Engineer based in Melbourne, specializing in complex SolidWorks modeling and comprehensive project engineering. I transform technical concepts into highly accurate, manufacturing-ready designs, leveraging precision metrology and robust BOM management to streamline product development.</p>
         </div>
         <img src="profile.jpg" alt="Antony Alder George" class="profile-pic">
     </div>
