@@ -8,13 +8,14 @@
     <style>
         /* --- PREMIUM ENGINEERING COLOR PALETTE --- */
         :root {
-            --bg-main: #f8fafc; /* Very subtle cool off-white */
-            --text-main: #0f172a; /* Deep slate / almost navy */
-            --text-muted: #475569; /* Medium slate */
+            --bg-main: #f8fafc; 
+            --text-main: #0f172a; 
+            --text-muted: #475569; 
             --card-bg: #ffffff;
             --border-color: #e2e8f0;
-            --accent: #0ea5e9; /* Professional industrial blue */
+            --accent: #0ea5e9; 
             --accent-hover: #0284c7;
+            --header-bg: #0f172a; /* Dark sleek header */
         }
 
         body { 
@@ -30,91 +31,85 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         
         .container { 
-            max-width: 1050px; 
+            max-width: 1100px; /* Slightly wider to give skills more room */
             margin: 0 auto; 
             padding: 0 5%; 
         }
 
-        /* --- STICKY NAVIGATION HEADER --- */
+        /* --- DARK PREMIUM HEADER --- */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(248, 250, 252, 0.85); /* Translucent background */
-            backdrop-filter: blur(12px); /* Glassmorphism effect */
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.95); /* Deep dark slate */
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
         }
         
         .nav-container {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 15px 5%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Aligns links to the right since name is removed */
             align-items: center;
-        }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             align-items: center;
         }
 
         .nav-link {
             font-size: 0.95rem;
             font-weight: 500;
-            color: var(--text-muted);
+            color: #cbd5e1; /* Light gray text for dark header */
+            transition: color 0.3s ease;
         }
 
         .nav-link:hover {
-            color: var(--accent);
+            color: #ffffff; /* Turns bright white on hover */
         }
 
         .nav-btn {
-            padding: 8px 24px;
-            background: var(--text-main);
+            padding: 9px 26px;
+            background: var(--accent);
             color: #fff;
             border-radius: 6px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1);
+            box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
         }
 
         .nav-btn:hover {
-            background: var(--accent);
+            background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(14, 165, 233, 0.2);
+            box-shadow: 0 6px 14px rgba(14, 165, 233, 0.4);
             color: #fff;
         }
         
-        .section { padding: 4.5rem 0; }
+        .section { padding: 5.5rem 0; } /* Restored some breathing room */
 
         /* --- COMPACT HERO SECTION --- */
         .hero { 
-            padding-top: 9rem; /* Increased to account for the fixed header */
-            padding-bottom: 2rem; 
+            padding-top: 10rem; 
+            padding-bottom: 3rem; 
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 50px;
         }
 
         .hero-text { flex: 1; }
 
         .hero h1 { 
-            font-size: 3.2rem; 
+            font-size: 3.5rem; 
             font-weight: 700;
             line-height: 1.1; 
-            margin-bottom: 1rem; 
+            margin-bottom: 1.2rem; 
             letter-spacing: -0.03em; 
             color: var(--text-main);
         }
@@ -124,14 +119,15 @@
             color: var(--text-muted); 
             margin-bottom: 2rem; 
             font-weight: 400;
-            max-width: 580px;
+            max-width: 600px;
             line-height: 1.7;
+            text-align: justify; /* Justified text as requested */
         }
 
         /* Scaled down Profile Image */
         .profile-pic {
-            width: 240px;
-            height: 240px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
             border: 6px solid var(--card-bg);
@@ -145,37 +141,39 @@
 
         /* --- SHARPER SKILLS PILLS --- */
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: -0.02em;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             color: var(--text-main);
         }
 
         .skills-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-            gap: 2.5rem; 
+            /* Forced 3 columns to give it more prominence and space */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 3.5rem; 
         }
+        
         .skill-category h3 { 
-            font-size: 1.2rem; 
-            margin-bottom: 1.2rem; 
+            font-size: 1.25rem; 
+            margin-bottom: 1.5rem; 
             color: var(--text-main);
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
+            padding-bottom: 10px;
         }
         .skill-category ul { 
             list-style: none; 
             padding: 0; 
             display: flex; 
             flex-wrap: wrap; 
-            gap: 8px; 
+            gap: 10px; 
         }
         .skill-category li { 
             background: var(--card-bg); 
-            padding: 8px 16px; 
+            padding: 10px 18px; /* Slightly larger pills */
             border-radius: 6px; 
-            font-size: 0.9rem; 
+            font-size: 0.95rem; 
             color: var(--text-muted); 
             font-weight: 600;
             border: 1px solid var(--border-color);
@@ -185,13 +183,14 @@
             border-color: var(--accent);
             color: var(--accent);
             background: #f0f9ff;
+            transform: translateY(-2px);
         }
 
         /* --- PROFESSIONAL PROJECT CARDS --- */
         .project-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2rem; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
         }
         .project-card { 
             display: block; 
@@ -209,7 +208,7 @@
         }
         
         .project-img-wrapper { 
-            height: 240px; 
+            height: 250px; 
             overflow: hidden;
             border-bottom: 1px solid var(--border-color);
         }
@@ -255,26 +254,26 @@
             background: var(--card-bg);
         }
         
-        @media (max-width: 850px) { 
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 7rem; }
-            .hero h1 { font-size: 2.5rem; } 
-            .hero p { margin: 0 auto 2rem auto; }
+        @media (max-width: 900px) {
+            .skills-grid { grid-template-columns: 1fr; } /* Stacks skills vertically on phones */
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem; }
+            .hero h1 { font-size: 2.8rem; } 
+            .hero p { text-align: center; margin: 0 auto 2rem auto; }
             .profile-pic { width: 200px; height: 200px; }
-            .nav-links { gap: 15px; }
-            .nav-link { display: none; /* Hide text links on very small screens to save space */ }
+            .nav-container { justify-content: center; }
+            .nav-links { gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- STICKY HEADER -->
+    <!-- DARK PREMIUM HEADER -->
     <header class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Antony A. George</div>
             <nav class="nav-links">
                 <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
                 <!-- UPDATE YOUR LINKEDIN URL BELOW -->
-                <a href="https://www.linkedin.com/in/antony-george-673679388/" target="_blank" class="nav-link">LinkedIn Profile</a>
+                <a href="YOUR_LINKEDIN_URL_HERE" target="_blank" class="nav-link">LinkedIn Profile</a>
                 <a href="mailto:aag.ofcl@gmail.com" class="nav-btn">Contact Me</a>
             </nav>
         </div>
@@ -289,7 +288,7 @@
         <img src="profile.jpg" alt="Antony Alder George" class="profile-pic">
     </div>
 
-    <!-- TECHNICAL SKILLS SECTION -->
+    <!-- EXPANDED TECHNICAL SKILLS SECTION -->
     <div class="container section">
         <h2 class="section-title">Technical Proficiency</h2>
         <div class="skills-grid">
