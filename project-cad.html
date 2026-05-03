@@ -3,84 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAD & 3D Modeling | Antony Alder George</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet">
+    <title>CAD & Product Design | Antony Alder George</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'DM Sans', sans-serif; background: #fff; color: #1a1a1a; margin: 0; line-height: 1.8; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 5%; }
-        
-        nav { padding: 20px 5%; border-bottom: 1px solid #eee; }
-        .back-link { text-decoration: none; font-weight: bold; color: #666; font-size: 0.9rem; }
-        .back-link:hover { color: #000; }
+        /* --- PREMIUM ENGINEERING COLOR PALETTE --- */
+        :root {
+            --bg-main: #f8fafc; 
+            --text-main: #0f172a; 
+            --text-muted: #475569; 
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --accent: #0ea5e9; 
+            --accent-hover: #0284c7;
+            --header-bg: #0f172a;
+        }
 
-        .project-header { margin-top: 4rem; margin-bottom: 2rem; }
-        h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 10px; }
-        .subtitle { color: #666; font-size: 1.2rem; }
+        body { 
+            font-family: 'DM Sans', sans-serif; 
+            background: var(--bg-main); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
         
-        .content-block { margin-bottom: 3rem; }
-        h2 { font-size: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #1a1a1a; padding-left: 15px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
         
-        /* Stats Grid */
-        .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
-        .stat-item strong { display: block; font-size: 1.2rem; color: #1a1a1a; }
-        .stat-item span { font-size: 0.85rem; color: #666; }
+        .container { 
+            max-width: 1050px; 
+            margin: 0 auto; 
+            padding: 0 5%; 
+        }
 
-        /* GALLERY GRID */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .gallery-card { display: block; text-decoration: none; }
+        /* --- DARK PREMIUM HEADER --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .nav-back {
+            color: #cbd5e1;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-back:hover { color: #fff; }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #cbd5e1; 
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover { color: #ffffff; }
+
+        .section { padding: 4rem 0; } 
+
+        /* --- PROJECT HERO --- */
+        .project-hero { 
+            padding-top: 10rem; 
+            padding-bottom: 2rem; 
+        }
+
+        .project-hero h1 { 
+            font-size: 3.5rem; 
+            font-weight: 700;
+            line-height: 1.1; 
+            margin-bottom: 1rem; 
+            letter-spacing: -0.03em; 
+            color: var(--text-main);
+        }
+        
+        .subtitle { 
+            font-size: 1.25rem; 
+            color: var(--text-muted); 
+            font-weight: 400;
+            max-width: 700px;
+        }
+
+        /* --- STATS GRID --- */
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            background: var(--card-bg); 
+            padding: 25px 30px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color);
+            margin-bottom: 4rem; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+        }
+        .stat-item strong { display: block; font-size: 1.2rem; color: var(--text-main); margin-bottom: 4px; }
+        .stat-item span { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+
+        /* --- CONTENT BLOCKS --- */
+        .content-block { margin-bottom: 4rem; }
+        .content-block h2 { 
+            font-size: 1.8rem; 
+            margin-bottom: 1.5rem; 
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+        }
+        .content-block h2::after {
+            content: "";
+            flex: 1;
+            margin-left: 15px;
+            height: 1px;
+            background: var(--border-color);
+        }
+        .content-block p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 800px;
+        }
+        .content-block ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+        }
+        .content-block li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+        .content-block li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .content-block li strong { color: var(--text-main); }
+
+        /* --- MODERN GALLERY GRID --- */
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
+            margin-top: 2rem; 
+        }
+        .gallery-card { 
+            display: block; 
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+        .gallery-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
+        }
         
         .gallery-img-wrapper { 
-            overflow: hidden; 
-            border-radius: 8px; 
-            height: 200px; 
-            background: #eee; 
-            margin-bottom: 10px; 
-            border: 1px solid #ddd;
+            height: 250px; 
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            background: #f1f5f9;
         }
-        .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .gallery-card:hover .gallery-img { transform: scale(1.05); }
+        .gallery-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.6s ease; 
+        }
+        .gallery-card:hover .gallery-img { transform: scale(1.04); }
         
-        .gallery-title { font-weight: bold; color: #1a1a1a; display: block; margin-bottom: 5px; }
-        .gallery-desc { font-size: 0.85rem; color: #666; }
+        .gallery-info { padding: 20px; }
+        .gallery-title { 
+            font-weight: 700; 
+            color: var(--text-main); 
+            font-size: 1.25rem;
+            display: block; 
+            margin-bottom: 5px; 
+        }
+        .gallery-desc { font-size: 0.9rem; color: var(--text-muted); }
 
+        /* --- FOOTER --- */
+        footer { 
+            padding: 3rem 0; 
+            text-align: center; 
+            border-top: 1px solid var(--border-color); 
+            margin-top: 2rem; 
+            background: var(--card-bg);
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .project-hero { padding-top: 8rem; }
+            .project-hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplifies mobile header */
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="back-link">← Back to Portfolio</a>
-    </nav>
+    <!-- DARK PREMIUM HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-back">← Back to Portfolio</a>
+            <nav class="nav-links">
+                <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
+                <!-- UPDATE YOUR LINKEDIN URL BELOW -->
+                <a href="YOUR_LINKEDIN_URL_HERE" target="_blank" class="nav-link">LinkedIn Profile</a>
+            </nav>
+        </div>
+    </header>
 
     <div class="container">
         
-        <div class="project-header">
+        <div class="project-hero">
             <h1>CAD & Product Design</h1>
-            <p class="subtitle">Advanced Modeling & Visualization</p>
+            <p class="subtitle">Advanced 3D Modeling, Assembly Management, and Manufacturing-Ready Drafting.</p>
         </div>
 
         <div class="stats-grid">
-            <div class="stat-item"><strong>SolidWorks</strong> <span>Main Tool</span></div>
-            <div class="stat-item"><strong>Fusion 360</strong> <span>CAM & Modeling</span></div>
-            <div class="stat-item"><strong>Drafting</strong> <span>Production Drawings</span></div>
+            <div class="stat-item"><strong>SolidWorks</strong> <span>Primary Tool</span></div>
+            <div class="stat-item"><strong>3D Modeling</strong> <span>Complex Geometry</span></div>
+            <div class="stat-item"><strong>Drafting</strong> <span>Production & GD&T</span></div>
         </div>
 
         <div class="content-block">
             <h2>Design Philosophy</h2>
-            <p>I specialize in creating robust parametric models that are easy to edit and manufacture. My workflow involves moving from rough 2D sketches to complex 3D surface and solid bodies, ensuring all design intent is captured in the feature tree.</p>
+            <p>I specialize in creating robust, parametric models that capture true design intent. My workflow bridges the gap between conceptual 2D sketches and fully defined 3D solid bodies, ensuring models are inherently stable, easily editable, and fully optimized for real-world manufacturing.</p>
         </div>
 
         <div class="content-block">
-            <h2>Capabilities</h2>
+            <h2>Core Capabilities</h2>
             <ul>
-                <li><strong>Complex Assemblies:</strong> Managing large assemblies with mating conditions and interference detection.</li>
-                <li><strong>Sheet Metal Design:</strong> Creating flat patterns, bends, and cuts for fabrication.</li>
-                <li><strong>Drafting:</strong> Generating production-ready 2D drawings with proper GD&T and BOMs.</li>
+                <li><strong>Complex Assemblies:</strong> Managing large-scale multi-body assemblies with rigorous interference detection and dynamic mating conditions.</li>
+                <li><strong>Sheet Metal Design:</strong> Developing accurate flat patterns, calculating bend allowances, and preparing cuts for direct fabrication.</li>
+                <li><strong>Production Drafting:</strong> Generating highly detailed, manufacturing-ready 2D drawings incorporating strict GD&T standards (ISO 1101) and comprehensive BOMs.</li>
             </ul>
         </div>
 
         <div class="content-block">
             <h2>Selected CAD Projects</h2>
-            <p>Click on an image to view the full model details.</p>
+            <p style="margin-bottom: 20px;">Click on a project to view the detailed mechanical breakdowns and component renderings.</p>
             
             <div class="gallery-grid">
                 
@@ -88,42 +278,52 @@
                     <div class="gallery-img-wrapper">
                         <img src="cad-exhaust.jpg" alt="Exhaust Manifold" class="gallery-img">
                     </div>
-                    <span class="gallery-title">Exhaust Manifold</span>
-                    <span class="gallery-desc">Complex Lofting & Fluid Flow Design</span>
+                    <div class="gallery-info">
+                        <span class="gallery-title">Exhaust Manifold</span>
+                        <span class="gallery-desc">Complex Lofting & Fluid Flow Geometry</span>
+                    </div>
                 </a>
 
                 <a href="cad-engine.html" class="gallery-card">
                     <div class="gallery-img-wrapper">
                         <img src="cad-engine.jpg" alt="2 Stroke Engine" class="gallery-img">
                     </div>
-                    <span class="gallery-title">2 Stroke Engine</span>
-                    <span class="gallery-desc">Assembly Mating & Internal Components</span>
+                    <div class="gallery-info">
+                        <span class="gallery-title">2 Stroke Engine</span>
+                        <span class="gallery-desc">Assembly Mating & Internal Mechanics</span>
+                    </div>
                 </a>
 
                 <a href="cad-gear.html" class="gallery-card">
                     <div class="gallery-img-wrapper">
                         <img src="cad-gear.jpg" alt="Aircraft Landing Gear" class="gallery-img">
                     </div>
-                    <span class="gallery-title">Aircraft Landing Gear</span>
-                    <span class="gallery-desc">Structural Strength & Mechanisms</span>
+                    <div class="gallery-info">
+                        <span class="gallery-title">Aircraft Landing Gear</span>
+                        <span class="gallery-desc">Structural Strength & Mechanisms</span>
+                    </div>
                 </a>
 
                 <a href="cad-radial.html" class="gallery-card">
                     <div class="gallery-img-wrapper">
                         <img src="cad-radial.jpg" alt="Radial Engine" class="gallery-img">
                     </div>
-                    <span class="gallery-title">Radial Engine</span>
-                    <span class="gallery-desc">Multi-Cylinder Patterning</span>
+                    <div class="gallery-info">
+                        <span class="gallery-title">Radial Engine</span>
+                        <span class="gallery-desc">Multi-Cylinder Parametric Patterning</span>
+                    </div>
                 </a>
 
             </div>
         </div>
         
-        <br>
-        <a href="index.html" class="back-link" style="border: 1px solid #ddd; padding: 10px 20px; border-radius: 5px;">Back to Home</a>
-        <br><br><br>
-
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="font-weight: 600; color: var(--text-main); margin-bottom: 5px;">© 2026 Antony Alder George</p>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">Melbourne, VIC • 0435 481 997 • aag.ofcl@gmail.com</p>
+    </footer>
 
 </body>
 </html>
