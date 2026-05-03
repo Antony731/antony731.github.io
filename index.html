@@ -52,7 +52,7 @@
         .profile-pic {
             width: 280px;
             height: 280px;
-            border-radius: 50%; /* Circle */
+            border-radius: 50%;
             object-fit: cover;
             border: 5px solid #fff;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -82,7 +82,7 @@
             border-color: #000; 
         }
 
-        /* --- SKILLS SECTION (Bullet Points) --- */
+        /* --- SKILLS SECTION --- */
         .skills-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -152,7 +152,6 @@
             margin-top: 4rem; 
         }
         
-        /* Mobile Responsive */
         @media (max-width: 768px) { 
             .hero { flex-direction: column-reverse; text-align: center; }
             .hero h1 { font-size: 2.5rem; } 
@@ -163,21 +162,17 @@
 <body>
 
     <div class="container hero">
-        
         <div class="hero-text">
             <h1>Antony Alder George</h1>
-            
             <p>Mechanical Engineer based in Melbourne. <br> 
-            I combine advanced SolidWorks design skills with hands-on CNC experience to catch manufacturing errors before they happen.</p>
+            I specialize in advanced SolidWorks design and comprehensive project engineering to streamline product development from concept to manufacturing.</p>
             
             <div style="margin-top: 30px;">
                 <a href="mailto:aag.ofcl@gmail.com" class="btn">Contact Me</a>
                 <a href="resume.pdf" class="btn btn-outline">Download Resume</a>
             </div>
         </div>
-
         <img src="profile.jpg" alt="Antony Alder George" class="profile-pic">
-
     </div>
 
     <div class="container section">
@@ -189,16 +184,7 @@
                     <li>SolidWorks (Advanced 3D, Sheet Metal)</li>
                     <li>AutoCAD (2D Drafting)</li>
                     <li>GD&T (ISO 1101)</li>
-                    <li>DFM & Process Optimization</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Manufacturing</h3>
-                <ul>
-                    <li>CNC Operation (Lathe & Mill)</li>
-                    <li>Precision Metrology</li>
-                    <li>Material Specification</li>
-                    <li>Safety Protocols</li>
+                    <li>DFM & DFA Optimization</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -206,7 +192,17 @@
                 <ul>
                     <li>Primavera P6 & Scheduling</li>
                     <li>HAZOP & SIL Studies</li>
-                    <li>BOM Creation</li>
+                    <li>BOM Creation & Management</li>
+                    <li>ANSYS (FEA Analysis)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Manufacturing Quality</h3>
+                <ul>
+                    <li>Process Planning</li>
+                    <li>Precision Metrology</li>
+                    <li>Material Specification</li>
+                    <li>Safety Protocols</li>
                 </ul>
             </div>
         </div>
@@ -217,6 +213,7 @@
         
         <div class="project-grid">
             
+            <!-- PROJECT 1: Sealing System -->
             <a href="project-sealing.html" class="project-card">
                 <div class="project-img-wrapper">
                     <img src="sealing-machine.jpg" alt="Rotary Sealing Machine" class="project-img">
@@ -228,17 +225,7 @@
                 </div>
             </a>
 
-            <a href="project-cnc.html" class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="cnc-part.jpg" alt="CNC Precision Part" class="project-img">
-                </div>
-                <div class="project-info">
-                    <span class="tags">CNC • Metrology • Process</span>
-                    <h3>Precision Component Manufacturing</h3>
-                    <p>Optimized setup for high-precision parts using CNC Lathe/Milling and validated with metrology tools.</p>
-                </div>
-            </a>
-
+            <!-- PROJECT 2: Mechanisms -->
             <a href="mechanisms.html" class="project-card">
                 <div class="project-img-wrapper">
                     <img src="mechanisms.jpg" alt="Mechanical Mechanisms" class="project-img">
@@ -250,12 +237,13 @@
                 </div>
             </a>
 
+            <!-- PROJECT 3: CAD & Modeling -->
             <a href="project-cad.html" class="project-card">
                 <div class="project-img-wrapper">
                     <img src="cad-model.jpg" alt="3D CAD Model" class="project-img">
                 </div>
                 <div class="project-info">
-                    <span class="tags">SolidWorks • Fusion 360 • Rendering</span>
+                    <span class="tags">SolidWorks • 3D Modeling • Rendering</span>
                     <h3>CAD & Product Design</h3>
                     <p>Complex 3D part modeling, multi-body assemblies, and photorealistic rendering for product visualization.</p>
                 </div>
