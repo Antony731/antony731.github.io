@@ -15,7 +15,7 @@
             --border-color: #e2e8f0;
             --accent: #0ea5e9; 
             --accent-hover: #0284c7;
-            --header-bg: #0f172a; /* Dark sleek header */
+            --header-bg: #0f172a;
         }
 
         body { 
@@ -31,7 +31,7 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         
         .container { 
-            max-width: 1100px; /* Slightly wider to give skills more room */
+            max-width: 1100px; 
             margin: 0 auto; 
             padding: 0 5%; 
         }
@@ -41,7 +41,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.95); /* Deep dark slate */
+            background: rgba(15, 23, 42, 0.95); 
             backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -53,7 +53,7 @@
             margin: 0 auto;
             padding: 15px 5%;
             display: flex;
-            justify-content: flex-end; /* Aligns links to the right since name is removed */
+            justify-content: flex-end; 
             align-items: center;
         }
 
@@ -66,12 +66,12 @@
         .nav-link {
             font-size: 0.95rem;
             font-weight: 500;
-            color: #cbd5e1; /* Light gray text for dark header */
+            color: #cbd5e1; 
             transition: color 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #ffffff; /* Turns bright white on hover */
+            color: #ffffff; 
         }
 
         .nav-btn {
@@ -91,7 +91,7 @@
             color: #fff;
         }
         
-        .section { padding: 5.5rem 0; } /* Restored some breathing room */
+        .section { padding: 5.5rem 0; } 
 
         /* --- COMPACT HERO SECTION --- */
         .hero { 
@@ -100,7 +100,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 50px;
+            gap: 60px; /* Slightly increased gap for the larger image */
         }
 
         .hero-text { flex: 1; }
@@ -121,17 +121,17 @@
             font-weight: 400;
             max-width: 600px;
             line-height: 1.7;
-            text-align: justify; /* Justified text as requested */
+            text-align: justify; 
         }
 
-        /* Scaled down Profile Image */
+        /* --- LARGER SQUARE PROFILE IMAGE --- */
         .profile-pic {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
+            width: 340px;
+            height: 340px;
+            border-radius: 16px; /* Smooth rounded square */
             object-fit: cover;
-            border: 6px solid var(--card-bg);
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+            border: 8px solid var(--card-bg);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
             flex-shrink: 0;
             transition: transform 0.4s ease;
         }
@@ -150,7 +150,6 @@
 
         .skills-grid { 
             display: grid; 
-            /* Forced 3 columns to give it more prominence and space */
             grid-template-columns: repeat(3, 1fr); 
             gap: 3.5rem; 
         }
@@ -171,7 +170,7 @@
         }
         .skill-category li { 
             background: var(--card-bg); 
-            padding: 10px 18px; /* Slightly larger pills */
+            padding: 10px 18px; 
             border-radius: 6px; 
             font-size: 0.95rem; 
             color: var(--text-muted); 
@@ -255,11 +254,11 @@
         }
         
         @media (max-width: 900px) {
-            .skills-grid { grid-template-columns: 1fr; } /* Stacks skills vertically on phones */
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem; }
+            .skills-grid { grid-template-columns: 1fr; } 
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem; gap: 40px; }
             .hero h1 { font-size: 2.8rem; } 
             .hero p { text-align: center; margin: 0 auto 2rem auto; }
-            .profile-pic { width: 200px; height: 200px; }
+            .profile-pic { width: 100%; max-width: 320px; height: auto; aspect-ratio: 1 / 1; }
             .nav-container { justify-content: center; }
             .nav-links { gap: 20px; }
         }
@@ -273,7 +272,7 @@
             <nav class="nav-links">
                 <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
                 <!-- UPDATE YOUR LINKEDIN URL BELOW -->
-                <a href="https://www.linkedin.com/in/antony-george-673679388/" target="_blank" class="nav-link">LinkedIn Profile</a>
+                <a href="YOUR_LINKEDIN_URL_HERE" target="_blank" class="nav-link">LinkedIn Profile</a>
                 <a href="mailto:aag.ofcl@gmail.com" class="nav-btn">Contact Me</a>
             </nav>
         </div>
